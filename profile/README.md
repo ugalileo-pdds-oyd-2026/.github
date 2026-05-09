@@ -66,6 +66,11 @@ Reference solutions for in-class exercises, organized by session. Each solution 
 * **[Exercise 1.1: What Will Terraform Do?](https://github.com/ugalileo-pdds-oyd-2026/exercise-1-1):** Builds Terraform plan literacy without touching real infrastructure — students read and interpret a plan output, decode the `+`, `~`, and `-/+` symbols, and articulate why `plan` is a safe, read-only operation that never writes state.
 * **[Exercise 1.2: Break Apart the Monolith](https://github.com/ugalileo-pdds-oyd-2026/exercise-1-2):** Splits a single-file Terraform configuration into purpose-specific files, parameterizes all hardcoded values with variables and locals, and uses tfvars files to demonstrate that environment promotion requires no code changes at all.
 
+### Session 2 — Kubernetes Basics and GitHub Actions CI
+
+* **[Exercise 2.1: Kubernetes Manifests for a Web Application](https://github.com/ugalileo-pdds-oyd-2026/exercise-2-1):** Builds a complete Kubernetes deployment from scratch — Namespace, ConfigMap, Deployment, and Service — for a Node.js application, with emphasis on validating manifests before applying and using port-forward as observable evidence that ConfigMap values are correctly injected at runtime.
+* **[Exercise 2.2: GitHub Actions CI Workflow for Terraform](https://github.com/ugalileo-pdds-oyd-2026/exercise-2-2):** Builds a real CI gating mechanism for Terraform by chaining fmt, init, validate, and plan as a progressive failure filter on every pull request, then posting the plan output as an inline PR comment so reviewers can never merge without seeing the infrastructure impact.
+
 ## Academic Integrity Policy
 
 While this repository hosts solved exercises, please adhere to the course academic integrity standards:

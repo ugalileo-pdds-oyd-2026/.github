@@ -36,6 +36,15 @@ Materials are organized based on the course schedule and topics:
 * **IAM as Code and Security Automation:** Implementing security best practices through Identity and Access Management (IAM) as code.
 * **Observability Automation:** Automating logs, metrics, and alarms.
 
+## Solved Exercises
+
+Reference solutions for in-class exercises, organized by session. Each solution repository contains a step-by-step commit history and the teacher's commentary explaining the intent behind each task.
+
+| # | Exercise | Session | Description |
+|:-:|----------|:-------:|-------------|
+| 1.1 | [What Will Terraform Do?](https://github.com/ugalileo-pdds-oyd-2026/exercise-1-1) | 1 | Builds Terraform plan literacy without touching real infrastructure. Students read and interpret a `terraform plan` output — decoding `+`, `~`, and `-/+` symbols, explaining `(known after apply)` values, and articulating the critical difference between in-place updates and destroy-and-recreate. Reinforces that `plan` is a safe, read-only operation that never writes state. |
+| 1.2 | [Break Apart the Monolith](https://github.com/ugalileo-pdds-oyd-2026/exercise-1-2) | 1 | Addresses the most common day-one Terraform anti-pattern: the single-file configuration. Students split a monolithic `everything.tf` into purpose-specific files (`provider.tf`, `variables.tf`, `locals.tf`, `main.tf`, `outputs.tf`), parameterize all hardcoded values with variables and locals, and use `tfvars` files to show that environment promotion becomes a single flag change — no code edits required. |
+
 ## Academic Integrity Policy
 
 While this repository hosts solved exercises, please adhere to the course academic integrity standards:

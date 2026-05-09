@@ -1,34 +1,51 @@
 # Claude Instructions — OyD 2026 GitHub Profile
 
-## Adding Solved Exercises to the README
+## Format rules for profile/README.md
 
-When the instructor asks to add a solved exercise to `profile/README.md`, follow these steps:
+Both "Class Demos" and "Solved Exercises" sections use the same structure:
 
-1. **Read the current README** at `profile/README.md` to find the existing "Solved Exercises" table and understand the current state.
+- An `##` section heading for the category ("Class Demos", "Solved Exercises").
+- An `###` subsection for each session, titled `Session N — <Topic>`. Get the topic from `syllabus.md`.
+- Inside each session, a bulleted list. Each bullet follows this pattern:
+  ```
+  * **[<Title>](<url>):** <one-sentence description — high-level only, no commands>
+  ```
+- Descriptions must be high-level: what concept it covers and what students learn. No CLI commands, no file names, no step-by-step details.
+- Append new sessions at the bottom of each section. Append new items within a session in the order they were added.
 
-2. **Fetch the exercise repo's README** using the GitHub CLI to understand what the exercise is about:
+## Adding a Class Demo
+
+When the instructor provides a demo repo URL:
+
+1. Read `profile/README.md` to find the current state of the "Class Demos" section.
+2. Fetch the demo repo's README:
    ```bash
    gh api repos/ugalileo-pdds-oyd-2026/<repo-name>/readme --jq '.content' | base64 -d
    ```
+3. Write a one-sentence description from the "What students learn" section (or equivalent). Focus on the concept, not the steps.
+4. Determine the session number from the repo name (e.g., `session-3-demo-2-lambda` → Session 3) and confirm the session topic in `syllabus.md`.
+5. Add or extend the correct `### Session N` subsection in the "Class Demos" section of `profile/README.md`.
 
-3. **Write a one-paragraph description** based on the repo's "Teacher's Intent" section (or equivalent). The description should explain:
-   - What concept or skill the exercise targets
-   - What students do (the tasks)
-   - What they learn (the takeaway)
-   Keep it to 2–3 sentences — concise enough to fit a table cell.
+Demo repo naming convention: `session-<N>-demo-<M>-<slug>` (e.g., `session-2-demo-1-k8s-fastapi`).
 
-4. **Add a new row** to the Solved Exercises table in `profile/README.md`, following the existing format:
+## Adding a Solved Exercise
+
+When the instructor provides an exercise repo URL:
+
+1. Read `profile/README.md` to find the current state of the "Solved Exercises" section.
+2. Fetch the exercise repo's README:
+   ```bash
+   gh api repos/ugalileo-pdds-oyd-2026/<repo-name>/readme --jq '.content' | base64 -d
    ```
-   | <number> | [<Title>](<url>) | <session> | <description> |
-   ```
-   - Exercise numbers follow the pattern `<session>.<exercise-within-session>` (e.g., `1.1`, `1.2`, `2.1`).
-   - Session number matches the course schedule in `syllabus.md`.
-   - Append new rows at the bottom of the table.
+3. Write a one-sentence description from the "Teacher's Intent" section (or equivalent). Focus on the skill targeted and the key takeaway.
+4. Determine the session and exercise numbers from the repo name (e.g., `exercise-1-2` → Exercise 1.2, Session 1) and confirm the session topic in `syllabus.md`.
+5. Add or extend the correct `### Session N` subsection in the "Solved Exercises" section of `profile/README.md`.
 
-5. **Do not change any other section** of the README unless explicitly asked.
+Exercise repo naming convention: `exercise-<session>-<number>` (e.g., `exercise-1-2`).
+Exercise label format: `Exercise <session>.<number>` (e.g., `Exercise 1.2`).
 
-## Course Context
+## Course reference
 
 - **Organization:** `ugalileo-pdds-oyd-2026`
-- **Exercise repos** follow the naming convention `exercise-<session>-<number>` (e.g., `exercise-1-1`, `exercise-2-1`).
-- The course schedule and session topics are in `syllabus.md`. Use it to confirm which session an exercise belongs to.
+- **Session topics and dates:** `syllabus.md`
+- **Do not modify** any other section of `profile/README.md` unless explicitly asked.

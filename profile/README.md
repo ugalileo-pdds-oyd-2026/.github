@@ -71,6 +71,12 @@ Reference solutions for in-class exercises, organized by session. Each solution 
 * **[Exercise 2.1: Kubernetes Manifests for a Web Application](https://github.com/ugalileo-pdds-oyd-2026/exercise-2-1):** Builds a complete Kubernetes deployment from scratch — Namespace, ConfigMap, Deployment, and Service — for a Node.js application, with emphasis on validating manifests before applying and using port-forward as observable evidence that ConfigMap values are correctly injected at runtime.
 * **[Exercise 2.2: GitHub Actions CI Workflow for Terraform](https://github.com/ugalileo-pdds-oyd-2026/exercise-2-2):** Builds a real CI gating mechanism for Terraform by chaining fmt, init, validate, and plan as a progressive failure filter on every pull request, then posting the plan output as an inline PR comment so reviewers can never merge without seeing the infrastructure impact.
 
+### Session 3 — Compute Automation and EKS Provisioning
+
+* **[Exercise 3.1: EC2 Compute Module](https://github.com/ugalileo-pdds-oyd-2026/exercise-3-1):** Extracts EC2 infrastructure into a reusable Terraform module — instance, IAM role, least-privilege S3 policy, instance profile, and security group — and adds a GitHub Actions CI pipeline that enforces Terraform hygiene and posts the plan as a PR comment.
+* **[Exercise 3.2: Lambda Currency Converter](https://github.com/ugalileo-pdds-oyd-2026/exercise-3-2):** Packages a Lambda function and API Gateway into a reusable Terraform module, highlighting the `aws_lambda_permission` resource that grants API Gateway invocation rights, and wires a two-job CI pipeline that builds the deployment zip before Terraform runs plan.
+* **[Exercise 3.3: EKS Module](https://github.com/ugalileo-pdds-oyd-2026/exercise-3-3):** Provisions an EKS cluster using the community Terraform module, then builds an arm64 container image for Graviton nodes and deploys it via Kubernetes manifests, reinforcing that cluster provisioning and kubectl access are separate steps and that NLB-backed Services must be deleted before `terraform destroy`.
+
 ## Academic Integrity Policy
 
 While this repository hosts solved exercises, please adhere to the course academic integrity standards:

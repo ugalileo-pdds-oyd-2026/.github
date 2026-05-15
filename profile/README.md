@@ -57,6 +57,13 @@ Live-coded walkthroughs from each session, organized by topic. Each repository c
 * **[Demo 3: ECS Fargate + ALB](https://github.com/ugalileo-pdds-oyd-2026/session-3-demo-3-ecs):** Deploys the containerized Go service on ECS Fargate behind an Application Load Balancer, covering the distinction between execution and task IAM roles, ARM64 runtime configuration, and an explicit `depends_on` that Terraform cannot infer from references alone.
 * **[Demo 4: EKS Cluster](https://github.com/ugalileo-pdds-oyd-2026/session-3-demo-4-eks):** Provisions an EKS cluster with Terraform and deploys the same Go API via Kubernetes manifests, showing how the two automation layers — Terraform for the platform, manifests for the application — work together and where their responsibilities divide.
 
+### Session 4 — Storage and Database Automation with Remote State
+
+* **[Demo 1: S3 Photo Archive Module](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-1-s3):** Builds a reusable Terraform module that provisions an S3 bucket with versioning, three-tier lifecycle tiering, server-side encryption, and an HTTPS-only bucket policy enforced via `jsonencode()` at plan time.
+* **[Demo 2: RDS Postgres Blog Database Module](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-2-dynamodb):** Builds an AWS RDS Postgres Terraform module that chains a security group, subnet group, and parameter group into a single database instance, illustrating how Terraform's dependency graph resolves resource order and why `sensitive = true` protects plan output but not the state file.
+* **[Demo 3: RDS Postgres Module](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-3-rds):** Provisions a production-ready Postgres database on AWS RDS using a reusable Terraform module, reinforcing why `sensitive = true` alone does not protect credentials, why an explicit subnet group is required, and which settings baseline encryption at rest and automated backups.
+* **[Demo 4: Bootstrap Remote State + Migration](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-4-remote-state):** Provisions an S3 + DynamoDB remote state backend from a separate bootstrap root, migrates an existing local state file to S3 with a single `terraform init`, and demonstrates live that DynamoDB serializes concurrent applies with a `ConditionalCheckFailedException`.
+
 ## Solved Exercises
 
 Reference solutions for in-class exercises, organized by session. Each solution repository contains a step-by-step commit history and the teacher's commentary explaining the intent behind each task.

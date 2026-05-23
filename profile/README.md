@@ -84,6 +84,10 @@ Reference solutions for in-class exercises, organized by session. Each solution 
 * **[Exercise 3.2: Lambda Currency Converter](https://github.com/ugalileo-pdds-oyd-2026/exercise-3-2):** Packages a Lambda function and API Gateway into a reusable Terraform module, highlighting the `aws_lambda_permission` resource that grants API Gateway invocation rights, and wires a two-job CI pipeline that builds the deployment zip before Terraform runs plan.
 * **[Exercise 3.3: EKS Module](https://github.com/ugalileo-pdds-oyd-2026/exercise-3-3):** Provisions an EKS cluster using the community Terraform module, then builds an arm64 container image for Graviton nodes and deploys it via Kubernetes manifests, reinforcing that cluster provisioning and kubectl access are separate steps and that NLB-backed Services must be deleted before `terraform destroy`.
 
+### Session 4 — Storage and Database Automation with Remote State
+
+* **[Exercise 4.1: Log Archive and User Event Ledger](https://github.com/ugalileo-pdds-oyd-2026/exercise-4-1):** Practices writing reusable Terraform modules from scratch by building an S3 log archive and a DynamoDB user events table, then composing them in a root module with environment-scoped variables, enforcing encryption and HTTPS compliance as module defaults, and capturing applied infrastructure as evidence.
+
 ## Academic Integrity Policy
 
 While this repository hosts solved exercises, please adhere to the course academic integrity standards:

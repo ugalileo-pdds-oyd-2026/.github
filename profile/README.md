@@ -87,6 +87,7 @@ Reference solutions for in-class exercises, organized by session. Each solution 
 ### Session 4 — Storage and Database Automation with Remote State
 
 * **[Exercise 4.1: Log Archive and User Event Ledger](https://github.com/ugalileo-pdds-oyd-2026/exercise-4-1):** Practices writing reusable Terraform modules from scratch by building an S3 log archive and a DynamoDB user events table, then composing them in a root module with environment-scoped variables, enforcing encryption and HTTPS compliance as module defaults, and capturing applied infrastructure as evidence.
+* **[Exercise 4.2: Orders Service Remote State Migration](https://github.com/ugalileo-pdds-oyd-2026/exercise-4-2):** Demonstrates why local Terraform state is unsafe in team environments by migrating a working workspace to an S3 + DynamoDB remote backend and then observing live lock contention — the `Error acquiring the state lock` error — when two concurrent applies race for the same DynamoDB entry.
 
 ## Academic Integrity Policy
 

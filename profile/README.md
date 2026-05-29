@@ -64,6 +64,13 @@ Live-coded walkthroughs from each session, organized by topic. Each repository c
 * **[Demo 3: RDS Postgres Module](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-3-rds):** Provisions a production-ready Postgres database on AWS RDS using a reusable Terraform module, reinforcing why `sensitive = true` alone does not protect credentials, why an explicit subnet group is required, and which settings baseline encryption at rest and automated backups.
 * **[Demo 4: Bootstrap Remote State + Migration](https://github.com/ugalileo-pdds-oyd-2026/session-4-demo-4-remote-state):** Provisions an S3 + DynamoDB remote state backend from a separate bootstrap root, migrates an existing local state file to S3 with a single `terraform init`, and demonstrates live that DynamoDB serializes concurrent applies with a `ConditionalCheckFailedException`.
 
+### Session 6 — Networking Automation
+
+* **[Demo 1: Network Foundation Module](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-1-network-foundation):** Builds a reusable Terraform network module that provisions a VPC, three-tier subnets, internet gateway, NAT gateway, and a layered security group stack, replacing hardcoded network IDs with portable CIDR-based declarations so the same configuration deploys cleanly across any AWS account.
+* **[Demo 2: Ingress Module + WAF](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-2-ingress):** Extracts an ALB from a compute module into a dedicated ingress module and attaches a WAF rate-based rule to it, then wires a three-module stack (network → ingress → compute) using module outputs to eliminate all hardcoded AWS network IDs.
+* **[Demo 3: API Gateway + Custom Domain + ACM + Route 53](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-3-apigw-route53):** Extends a Lambda + API Gateway deployment with a custom HTTPS domain by adding a DNS module that creates a Route 53 hosted zone, provisions and DNS-validates an ACM certificate, registers a custom domain on API Gateway, and points an ALIAS record at it — all without touching the application code.
+* **[Demo 4: EKS Cluster + ALB Controller + Kubernetes Ingress](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-4-k8s-ingress):** Extends an EKS deployment with the AWS Load Balancer Controller — installed via Helm and authenticated through IRSA — so a Kubernetes Ingress object provisions an internet-facing ALB without static credentials or a redundant NLB.
+
 ## Solved Exercises
 
 Reference solutions for in-class exercises, organized by session. Each solution repository contains a step-by-step commit history and the teacher's commentary explaining the intent behind each task.

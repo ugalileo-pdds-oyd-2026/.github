@@ -71,6 +71,11 @@ Live-coded walkthroughs from each session, organized by topic. Each repository c
 * **[Demo 3: API Gateway + Custom Domain + ACM + Route 53](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-3-apigw-route53):** Extends a Lambda + API Gateway deployment with a custom HTTPS domain by adding a DNS module that creates a Route 53 hosted zone, provisions and DNS-validates an ACM certificate, registers a custom domain on API Gateway, and points an ALIAS record at it — all without touching the application code.
 * **[Demo 4: EKS Cluster + ALB Controller + Kubernetes Ingress](https://github.com/ugalileo-pdds-oyd-2026/session-6-demo-4-k8s-ingress):** Extends an EKS deployment with the AWS Load Balancer Controller — installed via Helm and authenticated through IRSA — so a Kubernetes Ingress object provisions an internet-facing ALB without static credentials or a redundant NLB.
 
+### Session 7 — Asynchronous Infrastructure and Full CD Pipeline
+
+* **[Demo 1: Async Module + Event-Driven Compute](https://github.com/ugalileo-pdds-oyd-2026/session-7-demo-1-async-module):** Builds a reusable Terraform module that wires SQS queues, a Lambda Event Source Mapping, and an EventBridge Scheduler into a complete async job processing system, demonstrating how to resolve circular module dependencies through deterministic resource naming and why each AWS service requires its own dedicated IAM role.
+* **[Demo 2: Full CD Pipeline](https://github.com/ugalileo-pdds-oyd-2026/session-7-demo-2-full-cd-pipeline):** Builds a multi-environment GitHub Actions CD pipeline that promotes Terraform infrastructure from dev to staging using frozen plan artifacts as approval gates, branch protection rulesets with named status checks, gated environment approvals, and a scheduled drift detection workflow that fails loudly when infrastructure diverges from state.
+
 ## Solved Exercises
 
 Reference solutions for in-class exercises, organized by session. Each solution repository contains a step-by-step commit history and the teacher's commentary explaining the intent behind each task.

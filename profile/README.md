@@ -101,6 +101,21 @@ Reference solutions for in-class exercises, organized by session. Each solution 
 * **[Exercise 4.1: Log Archive and User Event Ledger](https://github.com/ugalileo-pdds-oyd-2026/exercise-4-1):** Practices writing reusable Terraform modules from scratch by building an S3 log archive and a DynamoDB user events table, then composing them in a root module with environment-scoped variables, enforcing encryption and HTTPS compliance as module defaults, and capturing applied infrastructure as evidence.
 * **[Exercise 4.2: Orders Service Remote State Migration](https://github.com/ugalileo-pdds-oyd-2026/exercise-4-2):** Demonstrates why local Terraform state is unsafe in team environments by migrating a working workspace to an S3 + DynamoDB remote backend and then observing live lock contention — the `Error acquiring the state lock` error — when two concurrent applies race for the same DynamoDB entry.
 
+### Session 6 — Networking Automation
+
+* **[Exercise 6.1: VPC Network Isolation](https://github.com/ugalileo-pdds-oyd-2026/exercise-6-1):** Provisions a VPC with public and private subnet tiers using Terraform's `count` meta-argument, showing how route table segregation and security group source references enforce network-layer isolation so internal resources are unreachable from the internet without any application-level changes.
+* **[Exercise 6.2: ALB with Listener and Target Group](https://github.com/ugalileo-pdds-oyd-2026/exercise-6-2):** Wires an Application Load Balancer from four tightly coupled pieces — security group, target group, listener, and instance attachment — and uses tag-based `data` sources to look up pre-existing VPC and EC2 resources instead of hardcoding IDs, teaching that an ALB provisions successfully but routes nothing without an explicit listener and a healthy target group.
+
+### Session 7 — Asynchronous Infrastructure and Full CD Pipeline
+
+* **[Exercise 7.1: Build a Reusable Queue Module](https://github.com/ugalileo-pdds-oyd-2026/exercise-7-1):** Extracts SQS queue provisioning into a reusable Terraform module that pairs every queue with a dead-letter queue via a `redrive_policy`, reinforcing that a module is just a directory of `.tf` files and that wiring a DLQ is non-negotiable in production to prevent silent message loss.
+* **[Exercise 7.2: Multi-Env Layout and GitHub Environment Promotion](https://github.com/ugalileo-pdds-oyd-2026/exercise-7-2):** Upgrades a monolithic CI job into three independent named checks, uploads the plan binary as an artifact so apply always consumes the exact plan a reviewer approved, and gates staging promotion behind a GitHub Environment with required reviewers — teaching that artifact-based promotion and environment protection rules are what separate a real CD pipeline from one that merely runs Terraform.
+
+### Session 8 — IAM as Code and Security Automation
+
+* **[Exercise 8.1: Least-Privilege IAM Module](https://github.com/ugalileo-pdds-oyd-2026/exercise-8-1):** Builds a reusable Terraform IAM module that assigns distinct least-privilege policies to an EC2 app server and a Lambda job processor, teaching that EC2 roles require an instance profile intermediary and that resource ARNs should be passed as Terraform references — not hardcoded strings — so policies stay correct across environments.
+* **[Exercise 8.2: OIDC Federation + Secrets Manager](https://github.com/ugalileo-pdds-oyd-2026/exercise-8-2):** Replaces long-lived AWS access keys in GitHub Actions with keyless OIDC federation by registering GitHub's OIDC provider in IAM and scoping the trust policy to a single repository and branch with `StringEquals`, then stores application secrets in Secrets Manager with `ignore_changes` so Terraform never overwrites a value rotated outside IaC.
+
 ## Academic Integrity Policy
 
 While this repository hosts solved exercises, please adhere to the course academic integrity standards:

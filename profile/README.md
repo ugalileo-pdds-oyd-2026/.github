@@ -76,6 +76,10 @@ Live-coded walkthroughs from each session, organized by topic. Each repository c
 * **[Demo 1: Async Module + Event-Driven Compute](https://github.com/ugalileo-pdds-oyd-2026/session-7-demo-1-async-module):** Builds a reusable Terraform module that wires SQS queues, a Lambda Event Source Mapping, and an EventBridge Scheduler into a complete async job processing system, demonstrating how to resolve circular module dependencies through deterministic resource naming and why each AWS service requires its own dedicated IAM role.
 * **[Demo 2: Full CD Pipeline](https://github.com/ugalileo-pdds-oyd-2026/session-7-demo-2-full-cd-pipeline):** Builds a multi-environment GitHub Actions CD pipeline that promotes Terraform infrastructure from dev to staging using frozen plan artifacts as approval gates, branch protection rulesets with named status checks, gated environment approvals, and a scheduled drift detection workflow that fails loudly when infrastructure diverges from state.
 
+### Session 8 — IAM as Code and Security Automation
+
+* **[Demo 1: IAM Module](https://github.com/ugalileo-pdds-oyd-2026/session-8-demo-1-iam-module):** Refactors four inline over-permissioned IAM resources into a reusable Terraform module that enforces least-privilege by construction, covering the anatomy of trust and permissions policies, when resource ARNs should replace wildcards, and why EC2 roles require an instance profile intermediary.
+
 ## Solved Exercises
 
 Reference solutions for in-class exercises, organized by session. Each solution repository contains a step-by-step commit history and the teacher's commentary explaining the intent behind each task.

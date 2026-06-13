@@ -79,6 +79,7 @@ Live-coded walkthroughs from each session, organized by topic. Each repository c
 ### Session 8 — IAM as Code and Security Automation
 
 * **[Demo 1: IAM Module](https://github.com/ugalileo-pdds-oyd-2026/session-8-demo-1-iam-module):** Refactors four inline over-permissioned IAM resources into a reusable Terraform module that enforces least-privilege by construction, covering the anatomy of trust and permissions policies, when resource ARNs should replace wildcards, and why EC2 roles require an instance profile intermediary.
+* **[Demo 2: Secrets Manager, OIDC Keyless Auth & TLS](https://github.com/ugalileo-pdds-oyd-2026/session-8-demo-2-secrets-oidc-tls):** Evolves a plaintext-password stack into a secure deployment by migrating runtime credentials to KMS-encrypted Secrets Manager, replacing stored AWS keys in CI with OIDC web identity federation, and enforcing HTTPS at the ALB with DNS-validated ACM certificates and a permanent HTTP-to-HTTPS redirect.
 
 ## Solved Exercises
 
